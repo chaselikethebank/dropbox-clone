@@ -32,9 +32,9 @@ export default function Home() {
 
         </div>
       </div>
-      <UserButton afterSignOutUrl="/" />
+      {/* <UserButton afterSignOutUrl="/" /> */}
 
-      <Button variant={'ghost'}> test btn</Button>
+      {/* <Button variant={'ghost'}> test btn</Button> */}
 
     </main>
   )
