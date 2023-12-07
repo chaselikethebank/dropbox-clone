@@ -6,7 +6,9 @@ import { set } from "firebase/database";
 import {
   addDoc,
   collection,
+  doc,
   serverTimestamp,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getDownloadURL,
@@ -40,31 +42,40 @@ function Dropzone() {
     };
   
     const uploadPost = async (selectedFile: File) => {
-      if (loading) return console.log("Already uploading file.");
+      if (loading) return console.log("currently uploading file.");
       if (!user) return console.log("No user signed in.");
   
       setLoading(true);
   
       try {
+        // console.log('selected file name: ' + selectedFile.name)          
+
         const docRef = await addDoc(
+            
           collection(db, "users", user.id, "files"),
           {
             userId: user.id,
             fileName: selectedFile.name,
             fullName: user.fullName,
             profileImage: user.imageUrl,
-            createdAt: serverTimestamp(),
+            timestamp: serverTimestamp(),
             type: selectedFile.type,
             size: selectedFile.size,
           }
         );
+
   
         const storageRef = ref(
           storage,
           `users/${user.id}/files/${docRef.id}`
         );
   
-        await uploadBytes(storageRef, selectedFile);
+        await uploadBytes(storageRef, selectedFile).then(async (snapshot) => { 
+            const downloadUrl = await getDownloadURL(storageRef)
+            
+            await updateDoc(doc(db, "users", user.id, "files", docRef.id), {
+                downloadUrl: downloadUrl,});
+         });
   
         const downloadedUrl = await getDownloadURL(storageRef);
         console.log("Downloaded URL:", downloadedUrl);
@@ -78,7 +89,7 @@ function Dropzone() {
   
     const maxSize = 2097152;
 
-    
+
 //   for the drag and drop of everything in the dropzone
     return (
       <DropzoneComponent
