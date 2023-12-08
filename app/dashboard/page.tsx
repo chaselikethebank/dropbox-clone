@@ -27,7 +27,9 @@ async function Dashboard() {
       <Dropzone/>
     
     <section className='container space-y-5'>
-      <h2 className='font-bold'>Assets</h2>
+      <h2 className='font-bold'>
+        {/* Assets */}
+        </h2>
 
       <div>
         <TableWrapper skeletonFiles={skeletonFiles} />
