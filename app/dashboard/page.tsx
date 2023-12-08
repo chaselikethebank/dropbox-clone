@@ -21,7 +21,7 @@ async function Dashboard() {
     size: doc.data().size,
    }))
 
-console.log(skeletonFiles, skeletonFiles.length)
+// console.log(skeletonFiles, skeletonFiles.length)
   return (
     <div className='border-1'>
       <Dropzone/>
@@ -30,10 +30,10 @@ console.log(skeletonFiles, skeletonFiles.length)
       <h2 className='font-bold'>Assets</h2>
 
       <div>
-        <TableWrapper skeletonFiles={[]} />
+        <TableWrapper skeletonFiles={skeletonFiles} />
         
       </div>
-      
+       
     </section>
     </div>
   )

@@ -1,23 +1,18 @@
 import { FileType } from '@/typings'
 import React from 'react'
 import { Button } from '../ui/button'
+import { columns } from './columns'
+import { DataTable } from './table'
 
-function TableWrapper(
-
-    { skeletonFiles }: { skeletonFiles: FileType[] }
-) {
+function TableWrapper( { skeletonFiles }: { skeletonFiles: FileType[] }) {
+// console.log('beggining of skeletonFiles log', skeletonFiles, 'skeletonFiles from table wrapper ')
   return (
     <div>
+        <Button className='mb-6'>Sort by ...</Button>
 
-        <Button>Sort by ...</Button>
+        <DataTable columns={columns} data={skeletonFiles} /> 
 
-        {/* data table */}
-
-        {/* <DataTable columns={columns} data={initialFiles} /> */}
-
-    <div>
-        {skeletonFiles.map((file) => (<div>{file.filename}</div>))}
-    </div>
+        
 
     </div>
   )
