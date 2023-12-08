@@ -16,18 +16,39 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## The thing it does
 
-To learn more about Next.js, take a look at the following resources:
+login w clerk/google, and host media assets to be shared long or shorterm similar to an s3 bucket is the idea but without having to setup permissions like s3
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Current Looks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![screen shot](../screen-shot.png)
+
+## Current Dependencies 
+
+```"dependencies": {
+    "@clerk/nextjs": "^4.27.2",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-table": "^8.10.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "firebase": "^10.7.1",
+    "lucide-react": "^0.293.0",
+    "next": "14.0.3",
+    "next-themes": "^0.2.1",
+    "pretty-bytes": "^6.1.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
+    "react-file-icon": "^1.3.0",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7"
+}
+```
+
 
 ## Deploy on Vercel
 
