@@ -21,7 +21,7 @@ async function Dashboard() {
     size: doc.data().size,
    }))
 
-// console.log(skeletonFiles, skeletonFiles.length)
+console.log(docsResults, "docsResults from dashboard.tsx")
   return (
     <div className='border-1'>
       <Dropzone/>

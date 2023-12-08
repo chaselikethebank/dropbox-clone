@@ -45,7 +45,7 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
       <div className='flex flex-col'>
         <Button variant={"outline"} className='ml-auto w-36 h-10 mb-5' >
         <Skeleton className='h-5 w-full'/>
-        </Button >
+        </Button>
         <div className='border rounded-lg'>
           <div>
             {skeletonFiles.map((file) => (
@@ -58,6 +58,13 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
               </div>
 
             ))}
+
+            {skeletonFiles.length === 0 && (
+              <div>
+                 <Skeleton className='h-12 w-12'/>
+                <Skeleton className='h-12 w-full'/>
+                </div>
+            )}
           </div>
 
         </div>

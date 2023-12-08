@@ -48,14 +48,14 @@ function Dropzone() {
       setLoading(true);
   
       try {
-        // console.log('selected file name: ' + selectedFile.name)          
+        console.log('selected file name: ' + selectedFile)          
 
         const docRef = await addDoc(
             
           collection(db, "users", user.id, "files"),
           {
             userId: user.id,
-            fileName: selectedFile.name,
+            filename: selectedFile.name,
             fullName: user.fullName,
             profileImage: user.imageUrl,
             timestamp: serverTimestamp(),
