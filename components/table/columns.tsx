@@ -13,7 +13,7 @@ import { useState } from "react";
 // You can use a Zod schema here  too.
 
 const defaultStyles = {
-  pdf: { color: "DodgerBlue" },
+  pdf: { color: "Blue" },
   doc: { color: "SteelBlue" },
   docx: { color: "SteelBlue" },
   xls: { color: "DarkSlateGray" },
