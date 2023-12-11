@@ -27,12 +27,13 @@ function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
 
   useEffect(() => {
     if (!docs) return;
+    
   // @ts-ignore
     const files: FileType[] = docs.docs.map((doc) => ({
       id: doc.id,
       filename: doc.data().filename,
       timestamp: new Date(doc.data().timestamp?.seconds * 1000) || undefined,
-      downloadURL: doc.data().downloadURL,
+      downloadURL: doc.data().downloadUrl,
       type: doc.data().type,
       size: doc.data().size,
     }));

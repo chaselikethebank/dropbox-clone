@@ -6,7 +6,8 @@ import { ColumnDef } from "@tanstack/react-table";
 import prettyBytes from "pretty-bytes";
 // import { render } from "react-dom";
 import { fileColorMap } from "@/constants";
-import { FileIcon } from "lucide-react";
+import { CopyIcon, DownloadIcon, FileIcon } from "lucide-react";
+import { useState } from "react";
 
 // This type is used to define the shape of the data.
 // You can use a Zod schema here  too.
@@ -83,12 +84,13 @@ export const columns: ColumnDef<FileType>[] = [
         const type = renderValue() as string;
         const extension: string = type.split("/")[1];
         return (
-            <div className="w-10">
+            <div className="w-10 ">
                 <FileIcon 
                 extension={extension}
                 labelcolor={fileColorMap[extension]}
                 // @ts-ignore
                 {...defaultStyles[extension]}
+                
                 />
             </div>
         )
@@ -116,9 +118,37 @@ export const columns: ColumnDef<FileType>[] = [
       return (
         <a href={renderValue() as string} target="_blank" rel="noreferrer"
         className="underline text-blue-500 hover:text-blue-600">
-          Download Asset
+          
+          <DownloadIcon className="m-auto" />
         </a>
       );
     },
   },
+  // {
+  //   accessorKey: "downloadURL",
+  //   header: "Copy Link",
+  //   cell: ({ renderValue, ...props }) => {
+  //     const [isCopied, setIsCopied] = useState(false);
+
+  //     const handleCopy = async (url: string) => {
+  //       try {
+  //         await navigator.clipboard.writeText(url);
+  //         setIsCopied(true);
+  //       } catch (error) {
+  //         console.error("Error copying link:", error);
+  //       }
+  //     };
+
+  //     return (
+  //       <button
+  //         className={`text-blue-500 hover:text-blue-600 ${
+  //           isCopied ? "text-green-500" : ""
+  //         }`}
+  //         onClick={() => handleCopy(renderValue() as string)}
+  //       >
+  //         <CopyIcon style={{ color: isCopied ? "green" : "DodgerBlue" }} />
+  //       </button>
+  //     );
+  //   },
+  // },
 ];
