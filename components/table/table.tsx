@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from 'next-themes';
 
 import {
   ColumnDef,
@@ -53,7 +54,6 @@ export function DataTable<TData, TValue>({
     setFileId(fileId);
     setFilename(filename);
     setIsRenameModalOpen(true);
-
   };
 
   // console.log(data, 'data from table.tsx')
@@ -118,7 +118,7 @@ export function DataTable<TData, TValue>({
                       >
                         {cell.getValue() as string}{" "}
                         <PencilIcon
-                          size={14}
+                          size={15}
                           className="ml-2 m-auto text-white"
                         />
                       </p>

@@ -124,31 +124,31 @@ export const columns: ColumnDef<FileType>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "downloadURL",
-  //   header: "Copy Link",
-  //   cell: ({ renderValue, ...props }) => {
-  //     const [isCopied, setIsCopied] = useState(false);
+  {
+    accessorKey: "downloadURL",
+    header: "Copy Link",
+    cell: ({ renderValue, ...props }) => {
+      const [isCopied, setIsCopied] = useState(false);
 
-  //     const handleCopy = async (url: string) => {
-  //       try {
-  //         await navigator.clipboard.writeText(url);
-  //         setIsCopied(true);
-  //       } catch (error) {
-  //         console.error("Error copying link:", error);
-  //       }
-  //     };
+      const handleCopy = async (url: string) => {
+        try {
+          await navigator.clipboard.writeText(url);
+          setIsCopied(true);
+        } catch (error) {
+          console.error("Error copying link:", error);
+        }
+      };
 
-  //     return (
-  //       <button
-  //         className={`text-blue-500 hover:text-blue-600 ${
-  //           isCopied ? "text-green-500" : ""
-  //         }`}
-  //         onClick={() => handleCopy(renderValue() as string)}
-  //       >
-  //         <CopyIcon style={{ color: isCopied ? "green" : "DodgerBlue" }} />
-  //       </button>
-  //     );
-  //   },
-  // },
+      return (
+        <button
+          className={`text-blue-500 hover:text-blue-600 ${
+            isCopied ? "text-green-500" : ""
+          }`}
+          onClick={() => handleCopy(renderValue() as string)}
+        >
+          <CopyIcon style={{ color: isCopied ? "green" : "DodgerBlue" }} />
+        </button>
+      );
+    },
+  },
 ];
