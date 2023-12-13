@@ -84,7 +84,7 @@ export const columns: ColumnDef<FileType>[] = [
         const type = renderValue() as string;
         const extension: string = type.split("/")[1];
         return (
-            <div className="w-10 ">
+            <div className="m-auto">
                 <FileIcon 
                 extension={extension}
                 labelcolor={fileColorMap[extension]}
@@ -117,9 +117,9 @@ export const columns: ColumnDef<FileType>[] = [
     cell: ({ renderValue, ...props }) => {
       return (
         <a href={renderValue() as string} target="_blank" rel="noreferrer"
-        className="underline text-blue-500 hover:text-blue-600">
+        className=" text-blue-500 hover:text-blue-600">
           
-          <DownloadIcon className="m-auto" />
+          <DownloadIcon className="" />
         </a>
       );
     },

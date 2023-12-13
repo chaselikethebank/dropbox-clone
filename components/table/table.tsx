@@ -58,8 +58,10 @@ export function DataTable<TData, TValue>({
 
   // console.log(data, 'data from table.tsx')
 
+
+
   return (
-    <div className="rounded-md border">
+    <div className="rounded-md border ">
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -91,14 +93,14 @@ export function DataTable<TData, TValue>({
                   <TableCell key={cell.id}>
                     {cell.column.id === "timestamp" ? (
                       <div className="flex flex-col">
-                        <div className="text-xs m-auto">
+                        <div className="text-xs">
                           {(cell.getValue() as Date).toLocaleString("en-US", {
                             month: "numeric",
                             day: "numeric",
                             year: "2-digit",
                           })}
                         </div>
-                        <div className="m-auto text-xs">
+                        <div className="text-xs">
                           {(cell.getValue() as Date).toLocaleString("en-US", {
                             hour: "numeric",
                             minute: "numeric",
@@ -114,7 +116,7 @@ export function DataTable<TData, TValue>({
                             (row.original as FileType).filename
                           );
                         }}
-                        className="underline flex item-center text-blue-500 hover:text-blue-600"
+                        className="underline flex items-center text-blue-500 hover:text-blue-600 max-w-[150px] overflow-hidden whitespace-nowrap overflow-ellipsis"
                       >
                         {cell.getValue() as string}{" "}
                         <PencilIcon

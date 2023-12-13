@@ -15,7 +15,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 function TableWrapper({ skeletonFiles }: { skeletonFiles: FileType[] }) {
   const { user } = useUser();
   const [initialFiles, setInitialFile] = useState<FileType[]>([]);
-  const [sort, setSort] = useState<"asc" | "desc">("asc");
+  const [sort, setSort] = useState<"asc" | "desc">("desc");
 
   const [docs, loading, errors] = useCollection(
     user &&
