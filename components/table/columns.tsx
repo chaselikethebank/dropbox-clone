@@ -10,7 +10,7 @@ import { CopyIcon, DownloadIcon, FileIcon } from "lucide-react";
 import { useState } from "react";
 
 // This type is used to define the shape of the data.
-// You can use a Zod schema here  too.
+// You can use a Zod schema here too.
 
 const defaultStyles = {
   pdf: { color: "Blue" },
@@ -111,19 +111,19 @@ export const columns: ColumnDef<FileType>[] = [
       return <span>{prettyBytes(renderValue() as number)}</span>;
     },
   },
-  {
-    accessorKey: "downloadURL",
-    header: "Location",
-    cell: ({ renderValue, ...props }) => {
-      return (
-        <a href={renderValue() as string} target="_blank" rel="noreferrer"
-        className=" text-blue-500 hover:text-blue-600">
+  // {
+  //   accessorKey: "location",
+  //   header: "Location",
+  //   cell: ({ renderValue, ...props }) => {
+  //     return (
+  //       <a href={renderValue() as string} target="_blank" rel="noreferrer"
+  //       className=" text-blue-500 hover:text-blue-600">
           
-          <DownloadIcon className="" />
-        </a>
-      );
-    },
-  },
+  //         <DownloadIcon className="" />
+  //       </a>
+  //     );
+  //   },
+  // },
   {
     accessorKey: "downloadURL",
     header: "Copy Link",
@@ -146,7 +146,7 @@ export const columns: ColumnDef<FileType>[] = [
           }`}
           onClick={() => handleCopy(renderValue() as string)}
         >
-          <CopyIcon style={{ color: isCopied ? "green" : "DodgerBlue" }} />
+          <CopyIcon style={{ color: isCopied ? "chartreuse" : "DodgerBlue" }} />
         </button>
       );
     },

@@ -21,7 +21,7 @@ function Dropzone() {
   const { isLoaded, isSignedIn, user } = useUser();
 
   const onDrop = async (acceptedFiles: File[]) => {
-    console.log(acceptedFiles);
+    // console.log(acceptedFiles);
     for (const file of acceptedFiles) {
       try {
         const reader = new FileReader();
@@ -82,7 +82,7 @@ function Dropzone() {
 
   //   for the drag and drop of everything in the dropzone
   return (
-    <DropzoneComponent minSize={0} maxSize={maxSize} onDrop={onDrop}>
+    <DropzoneComponent minSize={0} maxSize={maxSize} onDrop={onDrop} >
       {({
         getRootProps,
         getInputProps,

@@ -109,21 +109,23 @@ export function DataTable<TData, TValue>({
                         </div>
                       </div>
                     ) : cell.column.id === "filename" ? (
-                      <p
+                      <button
                         onClick={() => {
                           openRenameModal(
                             (row.original as FileType).id,
                             (row.original as FileType).filename
                           );
                         }}
-                        className="underline flex items-center text-blue-500 hover:text-blue-600 max-w-[150px] overflow-hidden whitespace-nowrap overflow-ellipsis"
+                        className="underline flex items-center text-blue500 hover:text-blue-600 max-w-[150px] overflow-hidden whitespace-nowrap overflow-ellipsis"
                       >
                         {cell.getValue() as string}{" "}
                         <PencilIcon
                           size={15}
-                          className="ml-2 m-auto text-white"
+                          className="ml-2 m-auto "
+                          onClick={() => console.log(`clicked the edit pencil in the table.tsx file`)}
                         />
-                      </p>
+                        
+                      </button>
                     ) : (
                       flexRender(cell.column.columnDef.cell, cell.getContext())
                     )}

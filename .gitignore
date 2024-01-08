@@ -28,9 +28,17 @@ yarn-error.log*
 # local env files
 .env*.local
 
+ç
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#firebase
+firebase.ts
+
+# firebase config
+firebaseConfig.js
