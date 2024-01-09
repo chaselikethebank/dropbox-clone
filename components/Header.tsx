@@ -17,7 +17,7 @@ function Header() {
             width={50}
           />
         </div>
-        <h1 className="font-bold text-xl">Hold Assets</h1>
+        <h1 className="font-bold text-xl">DropBox Killer</h1>
       </Link>
       <div className="px-5 flex space-x-2 items-center">
         <ThemeToggle />

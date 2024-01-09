@@ -9,7 +9,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hold My Assets',
+  title: 'DropBox Killer',
   description: 'created by Chase DeMaster !!!',
 }
 

@@ -9,18 +9,18 @@ export default function Home() {
     <main className="p-10 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white space-y-5">
       <div className="flex flex-col lg:flex-row items-center bg-[#2B2929] dark:bg-slate-800">
         <div>
-          <h1 className="text-5xl font-bold">Welcome to Drop Bucket.
+          <h1 className="text-5xl font-bold">Welcome to our DropBox killer.
           </h1>
             <br /><br />
             <h1>
-            Store assets in the cloud with ease.
+            Store assets in the cloud.
             </h1>
           <p className="py-10">
-            Optimize your productivity with our streamlined file management system. Effortlessly upload, categorize, and retrieve your assets from any location. Safeguard crucial documents and media securely, and with little friction.
+            Very easy, very free. 
           </p>
 
         <Link href="/dashboard" className="flex bg-blue-500 p-5 w-fit my-4">
-          Try it for free
+          Click here and start storing assets!
           <ArrowRight className="ml-10" />
         </Link>
         </div>
@@ -32,9 +32,9 @@ export default function Home() {
 
         </div>
       </div>
-      {/* <UserButton afterSignOutUrl="/" /> */}
+      <UserButton afterSignOutUrl="/" />
 
-      {/* <Button variant={'ghost'}> test btn</Button> */}
+      <Button variant={'ghost'}> test btn</Button>
 
     </main>
   )
