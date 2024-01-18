@@ -13,6 +13,9 @@ import {
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useState } from "react";
 import DropzoneComponent from "react-dropzone";
+import { Button } from "./ui/button";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 // ... (other imports)
 
@@ -41,7 +44,10 @@ function Dropzone() {
     if (loading) return console.log("currently uploading file.");
     if (!user) return console.log("No user signed in.");
 
+    
     setLoading(true);
+    const toastId = toast.loading("Uploading...")
+
 
     try {
       console.log("selected file name: " + selectedFile.name);
@@ -73,6 +79,9 @@ function Dropzone() {
     } catch (error) {
       console.error("Error uploading file:", error);
     } finally {
+      toast.success("Uploaded Successfully", {
+        id: toastId
+      })
       setLoading(false);
       console.log("Done uploading file.");
     }
@@ -102,13 +111,15 @@ function Dropzone() {
                 isDragActive ? "bg-[#035ffe] animate-pulse text-white" : ""
               )}
             >
+              <Button>
               <input {...getInputProps()} />
-              {!isDragActive && "Click here or drop an asset to upload!"}
-              {isDragActive && !isDragReject && "Drop to upload this asset!"}
-              {isDragReject && "File type not accepted, sorry!"}
+              {!isDragActive && "Click here or drop an asset to upload"}
+              {isDragActive && !isDragReject && "Drop to upload this asset"}
+              {isDragReject && "File type not accepted, sorry"}
               {isFileTooLarge && (
                 <div className="text-danger mt-2">File is too large.</div>
               )}
+              </Button>
             </div>
           </section>
         );

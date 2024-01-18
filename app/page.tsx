@@ -20,7 +20,6 @@ export default function Home() {
           </p>
 
         <Link href="/dashboard" className="flex bg-blue-500 p-5 w-fit my-4">
-          Click here and start storing assets!
           <ArrowRight className="ml-10" />
         </Link>
         </div>
