@@ -111,42 +111,39 @@ export const columns: ColumnDef<FileType>[] = [
       return <span>{prettyBytes(renderValue() as number)}</span>;
     },
   },
-  // {
-  //   accessorKey: "location",
-  //   header: "Location",
-  //   cell: ({ renderValue, ...props }) => {
-  //     return (
-  //       <a href={renderValue() as string} target="_blank" rel="noreferrer"
-  //       className=" text-blue-500 hover:text-blue-600">
-          
-  //         <DownloadIcon className="" />
-  //       </a>
-  //     );
-  //   },
-  // },
   {
     accessorKey: "downloadURL",
-    header: "Copy Link",
+    header: "Location",
     cell: ({ renderValue, ...props }) => {
-      const [isCopied, setIsCopied] = useState(false);
+      return (
+        <a href={renderValue() as string} target="_blank" rel="noreferrer"
+        className=" text-blue-500 hover:text-blue-600 ">
+          
+          <DownloadIcon className="" />
+        </a>
+      );
+    },
+  },
+  {
+    accessorKey: "downloadURL",
+    header: "Link",
+    cell: ({ renderValue, ...props }) => {
 
       const handleCopy = async (url: string) => {
         try {
           await navigator.clipboard.writeText(url);
-          setIsCopied(true);
         } catch (error) {
           console.error("Error copying link:", error);
         }
       };
+      
 
       return (
         <button
-          className={`text-blue-500 hover:text-blue-600 ${
-            isCopied ? "text-green-500" : ""
-          }`}
+          className={`text-blue-500 hover:text-blue-600`}
           onClick={() => handleCopy(renderValue() as string)}
         >
-          <CopyIcon style={{ color: isCopied ? "chartreuse" : "DodgerBlue" }} />
+          <CopyIcon style={{ color: "blue" }} />
         </button>
       );
     },

@@ -20,12 +20,12 @@ export default function Home() {
           </p>
 
         <Link href="/dashboard" className="flex bg-blue-500 p-5 w-fit my-4">
-          <ArrowRight className="ml-10" />
+          Try it now! <ArrowRight className="ml-10" />
         </Link>
         </div>
 
         <div className="bg-[#1e1919] dark:bg-slate-800 h-full p-0 lg:p-4">
-          <video  loop muted className="rounded-lg my-4">
+          <video autoPlay loop muted className="rounded-lg my-4">
           <source src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/overview/lp-header-graphite200-1920x1080.mp4" type="video/mp4" />
           </video>
 
@@ -33,7 +33,7 @@ export default function Home() {
       </div>
       <UserButton afterSignOutUrl="/" />
 
-      <Button variant={'ghost'}> test btn</Button>
+      {/* <Button variant={'ghost'}> test btn</Button> */}
 
     </main>
   )

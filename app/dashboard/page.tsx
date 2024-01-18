@@ -26,18 +26,18 @@ async function Dashboard() {
   // const arrayOfAds = [ 'https://firebasestorage.googleapis.com/v0/b/drop-bucket-cf27c.appspot.com/o/users%2Fuser_2Ym9eI6dO0qZwyEp1pRIoWMiuoq%2Ffiles%2FBpKHImMH6FK9N78ppmWt?alt=media&token=214f70df-dd93-4232-a81f-147503a1c89d', 'https://firebasestorage.googleapis.com/v0/b/drop-bucket-cf27c.appspot.com/o/users%2Fuser_2Ym9eI6dO0qZwyEp1pRIoWMiuoq%2Ffiles%2FlafSslVl2pN6KIzwzYMt?alt=media&token=ce7a50a9-ba9f-48ad-b948-e868a022e0f0', 'https://firebasestorage.googleapis.com/v0/b/drop-bucket-cf27c.appspot.com/o/users%2Fuser_2Ym9eI6dO0qZwyEp1pRIoWMiuoq%2Ffiles%2FX0vBsYmNrnWINHh301Bp?alt=media&token=60d24325-420f-4dc7-887a-9184b1ad69fe']
   // const adUrl = arrayOfAds[Math.floor(Math.random() * arrayOfAds.length)]
   
-  const adUrl = "https://i.guim.co.uk/img/static/sys-images/Media/Pix/gallery/2012/8/13/1344860400148/Nike-ad-celebrating-Mo-Fa-008.jpg?width=620&dpr=2&s=none"
+  // const adUrl = "https://i.guim.co.uk/img/static/sys-images/Media/Pix/gallery/2012/8/13/1344860400148/Nike-ad-celebrating-Mo-Fa-008.jpg?width=620&dpr=2&s=none"
 
 
   // console.log(docsResults, "docsResults from dashboard.tsx")
   return (
     <div className='border-1'>
       <div className='max-h-192 '>
-      <img
+      {/* <img 
           src={adUrl}
           alt='ad from nike'
           className='object-cover w-192 max-h-192 mx-auto py-10'
-          />
+          /> */}
       </div>
      
       <section className='container space-y-5'>
